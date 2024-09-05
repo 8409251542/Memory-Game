@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+}
+#card-section{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0.5rem;
+}
+.card{
+    width: 10rem;
+    height: 10rem;
+    background-color: orangered;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 0.6rem;
+}
+.card_selected{
+    border: .2rem solid yellowgreen;
+}
+.card_match{
+    border: .2rem solid green;
+}
