@@ -19,7 +19,7 @@ let cards = [
         'img': "https://w7.pngwing.com/pngs/662/687/png-transparent-basketball-illustration-basketball-sports-equipment-sports-league-woodville-tompkins-institute-basketball-sport-orange-team-thumbnail.png"
     }
 ]
-
+const countH =document.getElementById("count");
 const parentDiv = document.getElementById("card-section");
 const gameCrads = cards.concat(cards);
 let sufflecard = Array.from(gameCrads).sort(() => 0.5 - Math.random());
@@ -30,6 +30,7 @@ for (let i = 0; i < sufflecard.length; i++) {
     chaildDiv.style.backgroundImage = `url(${sufflecard[i].img})`;
     parentDiv.appendChild(chaildDiv);
 }
+let count=0;
 let clickCount = 0;
 let fCard = "";
 let sCard = "";
@@ -52,10 +53,13 @@ parentDiv.addEventListener('click', (e) => {
                 curCard.classList.add("card_match");
                 card_matched();
                 resetGame();
+                count++;
             } else {
                 resetGame();
+                count++;
             }
         }
+        countH.innerHTML=`${count}`;
     }
 
 })
